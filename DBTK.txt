@@ -72,7 +72,7 @@ branch char(13),
 cranch char(13),
 primary key(account_number, branch)
 );
-//(ÀÚ½Å¸¸ÀÇ °íÀ¯ÇÑ ¿¡·¯ ¸Ş½ÃÁö/¸Ş½ÃÁö¿¡ ¸í½Ã ¾ÈµÈ ¿¡·¯)
+//(ìì‹ ë§Œì˜ ê³ ìœ í•œ ì—ëŸ¬ ë©”ì‹œì§€/ë©”ì‹œì§€ì— ëª…ì‹œ ì•ˆëœ ì—ëŸ¬)
 
 create table hccount(
 foreign key(account_number, branch) references dccount(account_number, branch),
@@ -89,6 +89,12 @@ primary key(branch)
 );
 //Create table has failed: column definition is duplicated
 
+create table jccount(
+branch char(13),
+primary key(cranch)
+);
+//Create table has failed: 'cranch' does not exists in column definition (added 04/24)
+
 drop table account;
 //Drop table has failed: 'account' is referenced by other table
 
@@ -99,7 +105,7 @@ show tables;
 //account, fccount
 
 desc account exit
-//Syntax error (added by ¹é½Â¿í)
+//Syntax error (added by ë°±ìŠ¹ìš±)
 
 desc account;
 //account_number int N PRI
@@ -114,7 +120,7 @@ desc something;
 //No such table
 
 drop table fccount exit 
-//Syntax error (added by ¹é½Â¿í)
+//Syntax error (added by ë°±ìŠ¹ìš±)
 
 drop table fccount;
 //'fccount' table is dropped
@@ -123,13 +129,13 @@ drop table account;
 //'account' table is dropped
 
 create table a(x int) exit
-//Syntax error (added by ¹é½Â¿í)
+//Syntax error (added by ë°±ìŠ¹ìš±)
 
 show tables;
 //There is no table
 
 show tables exit
-//Syntax error (added by ¹é½Â¿í)
+//Syntax error (added by ë°±ìŠ¹ìš±)
 
 exit;
 //exit
