@@ -93,7 +93,7 @@ create table jccount(
 branch char(13),
 primary key(cranch)
 );
-//Create table has failed: 'cranch' does not exists in column definition (added 04/24)
+//Create table has failed: 'cranch' does not exists in column definition (added by 이종민)
 
 drop table account;
 //Drop table has failed: 'account' is referenced by other table
